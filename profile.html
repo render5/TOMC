@@ -1,0 +1,366 @@
+<!doctype html>
+<html lang="en">
+
+
+
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+	  <link rel="stylesheet" href="default.css">
+   
+    <title>The Online Movie Catalog</title>
+  </head>
+
+
+
+
+  <body background="sfondo.jpg" style="background-size: repeat">
+
+    <span class="centra bg-dark">
+      <h1 style="padding:0.3em; font-size:40pt; margin-bottom: -0.23em;" class="bg-dark text-light">The Online Movie Catalog</h1>
+    </span>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-dark">
+      <a class="navbar-brand text-light" href="home.html">Home</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a class="nav-link text-light" href="profile.html">Profilo <span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link text-light" href="login.html">Log-in/Register</a>
+          </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+          <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      </div>
+    </nav>
+	<br>
+	<br>
+	<br>
+	<br>
+  <div class="container shadow-lg opaco rounded">
+    <div class="col">
+      <h2 class="centra" style="padding-top: 0.6em;">Profilo <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+        <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5zm.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1h-4zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1h-2z"/>
+      </svg> </h2>
+      <hr />
+      <p id="tipo_utente"> </p>
+      <p id="active_account"> </p>
+    </div>
+    <div class="w-100"></div>
+    <div class="row">
+      <div class="col-3">
+        <svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" fill="currentColor" class="bi bi-person-square" viewBox="0 0 16 16">
+		      <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+		      <path d="M2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2zm12 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1v-1c0-1-1-4-6-4s-6 3-6 4v1a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12z"></path>
+	      </svg>
+      </div>
+      <div class="col-9">
+
+        <form onsubmit="return modifica()">
+          <div class="mb-3">
+            <label for="email_profile" class="form-label">Email address</label>
+            <input type="email" class="form-control" id="email_profile" aria-describedby="emailHelp" required>
+          </div>
+        
+          <div class="mb-3">
+            <label for="password_profile" class="form-label">Password</label>
+            <input type="password" class="form-control" id="password_profile" required>
+          </div>
+          
+            <div class="row mb-3 client" >
+            <div class="col-6">
+              <label for="name_profile" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="name_profile" placeholder="Mario" required>
+            </div>
+            <div class="col-6">
+              <label for="surname_profile" class="form-label">Cognome</label>
+              <input type="text" class="form-control" id="surname_profile" placeholder="Rossi" required>
+            </div>
+          </div>
+  
+          <div class="mb-3" >
+            <label for="address_profile" class="form-label">Indirizzo</label>
+            <input type="text" class="form-control" id="address_profile" placeholder="Via XXV Aprile, 1" required>
+          </div>
+          <div class="row mb-3" >
+            <div class="col-6">
+              <label for="city_profile" class="form-label">Città</label>
+              <input type="text" class="form-control" id="city_profile" placeholder="Milano"  required>
+            </div>
+            <div class="col-6">
+              <label for="cap_profile" class="form-label">CAP</label>
+              <input type="text" class="form-control" id="cap_profile" placeholder="12345" required>
+            </div>
+          </div>
+  
+          <div class="mb-3" >
+            <label for="phone_profile" class="form-label">Numero di telefono</label>
+            <input type="tel" class="form-control" id="phone_profile" placeholder="3276222737" required>
+          </div>
+          
+          
+          <div class="mb-3 shop" hidden>
+            <label for="partita_iva_profile" class="form-label">Partita IVA</label>
+            <input type="text" class="form-control" id="partita_iva_profile" placeholder="11223344556">
+          </div>
+          
+          <div class="mb-3 shop" hidden>
+            <label for="shop_name_profile" class="form-label">Nome del Negozio</label>
+            <input type="text" class="form-control" id="shop_name_profile" placeholder="Filmshop" disabled>
+          </div>
+          
+          <div class="centra">
+            <button type="submit" class="btn btn-primary">Modifica</button>
+          </div>
+          <br>
+        </form>
+         <div class="centra">
+            <button class="btn btn-danger" onclick="document.getElementById('sono_sicuro').hidden =false">Elimina Account</button>
+          </div>
+          <br>
+          <div class="centra" id="sono_sicuro" hidden>
+            <button class="btn btn-danger btn-sm" onclick="elimina_account()">Sono sicuto!</button>
+            <br>
+            <br>
+          </div>
+      </div>
+    </div>
+   </div>
+	
+<br>
+<br>
+<br>
+  <form onsubmit="return modifica()">
+   <div class="container shadow-lg opaco rounded">
+    <h2 class="centra" style="padding-top: 0.6em;">Preferenze <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-heart" viewBox="0 0 16 16">
+      <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"/>
+    </svg> </h2>
+    <hr />
+    <div class="container centra grande">
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="animazione" class="pref">
+          <label class="form-check-label pref_label" for="animazione">Animazione</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="avventura" class="pref">
+          <label class="form-check-label pref_label" for="avventura">Avventura</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="azione" class="pref">
+          <label class="form-check-label pref_label" for="azione">Azione</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="commedia" class="pref">
+          <label class="form-check-label pref_label" for="commedia">Commedia</label>
+        </div>
+        <div class="col"></div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="crime" class="pref">
+          <label class="form-check-label pref_label" for="crime">Crime</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="documentario" class="pref">
+          <label class="form-check-label pref_label" for="documentario">Documentario</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="dramma" class="pref">
+          <label class="form-check-label pref_label" for="dramma">Dramma</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="famiglia" class="pref">
+          <label class="form-check-label pref_label" for="famiglia">Famiglia</label>
+        </div>
+        <div class="col"></div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="fantascienza" class="pref">
+          <label class="form-check-label pref_label" for="fantascienza">Fantascienza</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="fantasy" class="pref">
+          <label class="form-check-label pref_label" for="fantasy">Fantasy</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="guerra" class="pref">
+          <label class="form-check-label pref_label" for="guerra">Guerra</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="horror" class="pref">
+          <label class="form-check-label pref_label" for="horror">Horror</label>
+        </div>
+        <div class="col"></div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="mistero" class="pref">
+          <label class="form-check-label pref_label" for="mistero">Mistero</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="musica" class="pref">
+          <label class="form-check-label pref_label" for="musica">Musica</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="romance" class="pref">
+          <label class="form-check-label pref_label" for="romance">Romance</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="storia" class="pref">
+          <label class="form-check-label pref_label" for="storia">Storia</label>
+        </div>
+        <div class="col"></div>
+      </div>
+      <br>
+
+      <div class="row">
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="thriller" class="pref">
+          <label class="form-check-label pref_label" for="thriller">Thriller</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="western" class="pref">
+          <label class="form-check-label pref_label" for="western">Western</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2 shadow-lg rounded bordo">
+          <input type="checkbox" id="televisione_film" class="pref">
+          <label class="form-check-label pref_label" for="televisione_film">Televisione film</label>
+        </div>
+        <div class="col"></div>
+        <div class="col-2">
+        </div>
+        <div class="col"></div>
+      </div>
+      <br>
+      <div class="centra">
+        <button type="submit" class="btn btn-primary">Salva</button>
+      </div>
+      <br>
+    </div>
+   </div>
+  </div>
+  </form>
+
+   <br>
+   <br>
+   <br>
+
+  <div class="container shadow-lg opaco rounded">
+    <h2 class="centra" style="padding-top: 0.6em;" id="film_venduti_comprati">Film <svg xmlns="http://www.w3.org/2000/svg" width="32" height="30" fill="currentColor" class="bi bi-camera-reels" viewBox="0 0 16 16">
+      <path d="M6 3a3 3 0 1 1-6 0 3 3 0 0 1 6 0zM1 3a2 2 0 1 0 4 0 2 2 0 0 0-4 0z"/>
+      <path d="M9 6h.5a2 2 0 0 1 1.983 1.738l3.11-1.382A1 1 0 0 1 16 7.269v7.462a1 1 0 0 1-1.406.913l-3.111-1.382A2 2 0 0 1 9.5 16H2a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h7zm6 8.73V7.27l-3.5 1.555v4.35l3.5 1.556zM1 8v6a1 1 0 0 0 1 1h7.5a1 1 0 0 0 1-1V8a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1z"/>
+      <path d="M9 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM7 3a2 2 0 1 1 4 0 2 2 0 0 1-4 0z"/>
+    </svg></h2>
+    <hr />
+
+    <div id="miei_film_venduti" hidden>
+      <div class="row"  style="color: white;">
+        <div class="col-6">
+          <h3>Titolo:</h3>
+        </div>
+        <div class="col">
+          <h3>Prezzo:</h3>
+        </div>
+        <div class="col">
+          <h3>Vendite:</h3>
+        </div>
+        <div class="col">
+          <h3>Noleggi:</h3>
+        </div>
+        <div class="col">
+          <h3>Elimina</h3>
+        </div>
+      </div>
+      <hr />
+      <div class="row"  style="color: white;">
+        <div class="col-6" id="titolo_vendita">
+        </div>
+        <div class="col-2" id="prezzo_vendita">
+        </div>
+        <div class="col" id="numero_vendite">
+        </div>
+        <div class="col" id="numero_noleggi">
+        </div>
+        <div class="col" id="elimina_film">
+        </div>
+      </div>
+    </div>
+
+    <div id="miei_film_posseduti" hidden>
+      <div class="row"  style="color: white;">
+        <div class="col-6">
+          <h3>Titolo:</h3>
+        </div>
+        <div class="col-2">
+          <h3>Prezzo:</h3>
+        </div>
+        <div class="col-2">
+          <h3>Venduto da:</h3>
+        </div>
+        <div class="col-2">
+          <h3>Noleggio:</h3>
+        </div>
+      </div>
+      <hr />
+      <div class="row"  style="color: white;">
+        <div class="col-6" id="titolo_acquisto">
+        </div>
+        <div class="col-2" id="prezzo_acquisto">
+        </div>
+        <div class="col-2" id="venditore_acquisto">
+        </div>
+        <div class="col-2" id="tempo_rimanente">
+        </div>
+      </div>
+    </div>
+    
+    <hr />
+  </div>
+  <br>
+  <br>
+  <br>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+
+</body>
+   <script type="text/javascript" src="script_profile.js"></script>
+</html>
